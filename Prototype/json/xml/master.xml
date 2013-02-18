@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+	<username>mike1989</username>
+	<albums>
+		<id>1</id>
+		<title>Record, Cassette and CD Collection</title>
+		<records>
+			<record>
+				<album>White Album</album>
+				<artist>Beatles</artist>
+				<media>Vinyl</media>
+				<condition>Good</condition>
+			</record>
+			<record>
+				<album>Abby Road</album>
+				<artist>Beatles</artist>
+				<media>Cassette</media>
+				<condition>Average</condition>
+			</record>
+			<record>
+				<album>Beatles \'65</album>
+				<artist>Beatles</artist>
+				<media>Vinyl</media>
+				<condition>Average</condition>
+			</record>
+			<record>
+				<album>Some Record</album>
+				<artist>Madonna</artist>
+				<media>Disco</media>
+				<condition>Excellent</condition>
+			</record>
+			<record>
+				<album>Another Record</album>
+				<artist>Ricky Martin</artist>
+				<media>Anything</media>
+				<condition>Perhaps</condition>
+			</record>
+			<record>
+				<album>Red Album</album>
+				<artist>Los Pericso</artist>
+				<media>Reggae</media>
+				<condition>Wooze</condition>
+			</record>
+			<record>
+				<album>Perfecly Fine</album>
+				<artist>Oasis</artist>
+				<media>Rock</media>
+				<condition>Duknow</condition>
+			</record>
+			<record>
+				<album>Fast n Furious</album>
+				<artist>Album</artist>
+				<media>Pop</media>
+				<condition>Naive</condition>
+			</record>
+		</records>
+	</albums>
+	<guitars>
+		<id>2</id>
+		<title>Guitars</title>
+		<records>
+			<record>
+				<make>Martin</make>
+				<model>D-42</model>
+				<year>2003</year>
+				<condition>More</condition>
+				<value>3500</value>
+				<notes>goldPU</notes>
+				<type>Accoustic</type>
+			</record>
+			<record>
+				<make>Martin</make>
+				<model>D-28</model>
+				<year>1973</year>
+				<condition>Come</condition>
+				<value>900</value>
+				<notes>beautiful</notes>
+				<type>Accoustic</type>
+			</record>
+			<record>
+				<make>Epiphone</make>
+				<model>335</model>
+				<year>1994</year>
+				<condition>Now</condition>
+				<value>300</value>
+				<notes>Red</notes>
+				<type>Semi</type>
+			</record>
+			<record>
+				<make>Fender</make>
+				<model>Strat</model>
+				<year>1987</year>
+				<condition>Weez</condition>
+				<value>800</value>
+				<notes>Black</notes>
+				<type>Solid</type>
+			</record>
+			<record>
+				<make>Heavy Duty</make>
+				<model>Now</model>
+				<year>1988</year>
+				<condition>Bad</condition>
+				<value>100</value>
+				<notes>Red</notes>
+				<type>Semi</type>
+			</record>
+			<record>
+				<make>From</make>
+				<model>Lel</model>
+				<year>1000</year>
+				<condition>Old</condition>
+				<value>758</value>
+				<notes>Purple</notes>
+				<type>Marocco</type>
+			</record>
+			<record>
+				<make>Internet Explorer</make>
+				<model>BMS</model>
+				<year>1300</year>
+				<condition>New</condition>
+				<value>765</value>
+				<notes>Pink</notes>
+				<type>Semi</type>
+			</record>
+			<record>
+				<make>Great Man</make>
+				<model>Working!</model>
+				<year>1945</year>
+				<condition>Antique</condition>
+				<value>2300</value>
+				<notes>Blue</notes>
+				<type>Sorry</type>
+			</record>
+			<record>
+				<make>Fernando</make>
+				<model>23</model>
+				<year>1342</year>
+				<condition>Jesus</condition>
+				<value>890</value>
+				<notes>Any</notes>
+				<type>Tutu</type>
+			</record>
+			<record>
+				<make>Nice</make>
+				<model>Thing</model>
+				<year>2309</year>
+				<condition>Have</condition>
+				<value>App</value>
+				<notes>Purple</notes>
+				<type>Case</type>
+			</record>
+		</records>
+	</guitars>
+</response>

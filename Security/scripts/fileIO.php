@@ -5,11 +5,12 @@
 	/* 
 		Getting the name of the folder
 		Setting the path for creation
-		Create folder
+		Create folder if it doesn't exist
 	*/
 	$folder = $_POST['key'];
 	$path = "../users/".$folder;
-	$mkdir = mkdir($path);
+	if (!is_dir($path))
+		$mkdir = mkdir($path);
 	
 	/* 
 		Generating the encrypted key for the filename
@@ -22,7 +23,7 @@
 	if (file_exists($myFile)) {
 		// File exists -- reading the file
 		$fh = fopen($myFile, "r");
-		$content = "";
+		$content = "File Contents:\n";
 		
 		while (!feof($fh))
 		   $content .= fgets($fh);

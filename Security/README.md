@@ -17,12 +17,12 @@ Specifics
 
 If the users' folder and files do not exist, the encrypted keys will be generated and the files/folders will be created. Otherwise, the files will be only be read.
 
-Foldername Encryption:
-  Salt: "FolderHash"
+Foldername Encryption: <br />
+  Salt: "FolderHash"<br />
   Username + Salt + Password
   
-Filename Encryption:
-  Salt: "FileHash"
+Filename Encryption: <br />
+  Salt: "FileHash" <br />
   FolderEncryptionKey + Salt
 
 

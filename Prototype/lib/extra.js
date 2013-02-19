@@ -1,14 +1,18 @@
+/*
+Author: Miguel Barahona
+Date: February 16, 2013
+*/
+
 var changeOccurred = false;
 var thisCat = "";
 var tmpColHeaders; //@! temporary while api is being updated
-
 var colHeaderActivated = false;
 
 //onload function
 
 $(function(){ 
 	$("#tabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
-	$( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+	$( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );		
 	loadFiles("guitars");	   
 })
 
@@ -18,13 +22,14 @@ function loadFiles(category)
 {
 	thisCat = category; //initialise	
 	loadingLayer("on"); //activate loading
-
+	dynamicStyle();
+	
 	$.ajax({
 		url: "json/data.php",
 		data: "cat=" + category,
 		dataType: 'json',
 		type: 'POST',
-		success: function (res) {
+		success: function (res) {			
 			tmpColHeaders = res.colHeaders //@! temporary while api is being updated
 			$("#output").handsontable({
 				data: res.data,
@@ -36,17 +41,24 @@ function loadFiles(category)
 				onBeforeChange: function(data) //validating data
 				{	
 					if(colHeaderActivated == true)
-					{
-						var r=confirm("You cannot edit the grid when sorting is enabled.\nIf you wish to edit the grid click on \"OK\".\nOtherwise \"Cancel\".");
-						if (r)
+					{						
+					
+						$("#output").handsontable('deselectCell');
+						//prevents from navigating back in Chrome and Firefox
+						$("#output").keydown(function(e){if(e.keyCode == 8){e.preventDefault();}}); 
+						
+						//confirmation message
+						var r = confirm("You cannot edit the grid when sorting is enabled.\nIf "+
+						"you wish to edit the grid click on \"OK\".\nOtherwise \"Cancel\".");
+						if(r)
 						{
 							$("#output").handsontable('destroy'); //to reset table (more efficient instead of patching)
 							colHeaderActivated = false;							
 							loadFiles(category); //Changes are automatically saved (look at misc fns below) 
-							return false; //prevents backspace from navigating back
-						}
-						$("#output").handsontable('deselectCell');
-						return false;
+						} 
+
+						$("#output").handsontable.loadData(res.data); //patch to prevent the scrolls from breaking
+						return false;	
 					}
 				
 					for (var i = data.length - 1; i >= 0; i--) {
@@ -54,7 +66,7 @@ function loadFiles(category)
 						{
 							data[i][3] = data[i][3].replace(/(<([^>]+)>)/ig,"");							
 						}
-					}					
+					}						
 				},
 				onChange: function(changes, source){
 					if(source === 'loadData')
@@ -64,12 +76,11 @@ function loadFiles(category)
 						changeOccurred = true;
 					}
 				}
-			});			
-			
+			});									
 			$("#title").html(res.title);
 			loadingLayer("off"); //deactivate loading
 		}
-	});	
+	});		
 }
 
 //executed when "Save Changes" is clicked
@@ -104,7 +115,7 @@ function loadingLayer(onOff)
 {
 	if(onOff == "on")
 	{$("#loading").show();$("#overlay").show();} 
-	else {$("#loading").hide();$("#overlay").hide();}
+	else {$("#loading").hide();$("#overlay").hide();}	
 }
 
 
@@ -124,4 +135,11 @@ function saveChanges()
 			loadingLayer("off");
 		}
 	});	
+}
+
+//the dynamic nature of the tables requires the belowf fn
+
+function dynamicStyle() {
+	$("#output").css("height","300px");
+	$("#output").css("overflow","scroll");
 }

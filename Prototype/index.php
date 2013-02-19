@@ -35,8 +35,9 @@
 			<div id="loading"><img src="dist/css/custom-theme/images/ajax-loader.gif" /></div>
 		    <div id="overlay"></div>		    
             
-			<h1 id="title"></h1>
-        	<div id="output" style="height: 300px; overflow: scroll"> <!--@! to relative-->            	             
+			<h1 id="title"></h1>            
+            
+        	<div id="output"> <!--@! to relative-->            	             
 			</div>
         </div>
     </div>

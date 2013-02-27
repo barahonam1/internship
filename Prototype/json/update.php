@@ -1,4 +1,9 @@
 <?php
+/*
+Author: Miguel Barahona
+Date: February 16, 2013
+*/
+
 //main methods
 require_once("class/update_files.php");
 $headers = explode(",", $_POST["hd"]); //creates an array

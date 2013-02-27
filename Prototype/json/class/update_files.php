@@ -1,4 +1,9 @@
 <?php
+/*
+Author: Miguel Barahona
+Date: February 16, 2013
+*/
+
 class updateXMLFiles
 {
 	private $headers;

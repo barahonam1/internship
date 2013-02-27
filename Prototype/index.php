@@ -1,54 +1,94 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Display Records</title>
-
-<!--Loading Handsontable-->
-<script src="lib/jquery.js"></script> 
-<script src="dist/jquery.handsontable.full.js"></script>
-<link rel="stylesheet" media="screen" href="dist/jquery.handsontable.full.css">
-
-<!-- Table Extensions (Optional) - @! API has not been updated yet!
-<script src="ext/jquery.handsontable.removeRow.js"></script>
-<link rel="stylesheet" media="screen" href="ext/jquery.handsontable.removeRow.css" />
--->
-
-<!--jQuery UI-->
-<link rel="stylesheet" href="dist/css/custom-theme/jquery-ui-1.9.2.custom.min.css" />
-<script src="lib/js/jquery-ui-1.9.2.custom.min.js"></script>
-<link rel="stylesheet" href="dist/css/custom-theme/extra.css" />
-
-</head>
-
-<body>
-
-<div id="main">	
-    <br/>
-    <div id="tabs" style="font-size:80%;">    
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Manage My Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     
-        <ul>
-            <li><a class="xml" title="guitars" href="#tabs-1">Guitars</a></li>
-            <li><a class="xml" title="albums" href="#tabs-1">Albums</a></li>
-        </ul>
-        <div id="tabs-1">
-			<div id="loading"><img src="dist/css/custom-theme/images/ajax-loader.gif" /></div>
-		    <div id="overlay"></div>		    
-            
-			<h1 id="title"></h1>            
-            
-        	<div id="output"> <!--@! to relative-->            	             
-			</div>
+    <!-- Plugin -->
+    <link rel="stylesheet" media="screen" href="css/jquery.handsontable.full.css">
+    
+    <!-- Extra CSS -->
+    <link rel="stylesheet" href="css/extra.css">
+  </head>
+  <body>
+  
+    <!-- Nav Bar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#">Manage My Data</a>
+                <div class="nav-collapse collapse">
+                    <p class="navbar-text pull-right">
+                        Logged in as <a href="#" class="navbar-link">Username</a>
+                    </p>
+                    <ul class="nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-	<br/>
-   <div id="toolbar">
-   <!--Keep Below as Image for IE-->
-   <img id="saveChanges" style="cursor:pointer" src="dist/css/custom-theme/images/savebtn.png" />      
-   </div>
-</div>
-
-<script src="lib/extra.js"></script>
-
-</body>
+	
+    
+    <!-- Content -->
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+			<div class="well sidebar-nav">
+                <ul class="nav nav-tabs nav-stacked">
+                  <li class="active"><a href="#home" data-toggle="tab" class="xml" title="guitars">Guitars</a></li>
+                  <li><a href="#profile" data-toggle="tab" class="xml" title="albums">Albums</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="span10">
+			<div class="hero-unit" style="position:relative">
+            
+                <div id="loading"><img src="img/ajax-loader.gif" /></div>
+                <div id="overlay"></div>
+            
+            	<h1 id="title"></h1>
+                <div id="output"></div>
+                
+                <span id="saveChanges" class="btn">Save Changes</span>
+                <span id="deleteFunction" class="btn btn-danger">Delete</span>                
+                
+			</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Delete Record</h3>
+      </div>
+      <div class="modal-body">
+        <p align="center"><i class="icon-question-sign"></i> Are you sure you want to delete these records?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="deleteNow" class="btn btn-primary">OK</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button> <!-- !@ Should uncheck? -->
+      </div>
+    </div>
+    
+    <!-- Bootstrap -->
+    <script src="js/jquery.js"></script> <!--@! bt & pl-->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!-- Plugin -->    
+    <script src="js/jquery.handsontable.full.js"></script>    
+    <script src="js/settings.js"></script>
+    
+  </body>
 </html>

@@ -132,24 +132,6 @@
 				<type>Some</type>
 			</record>
 			<record>
-				<make>Something More</make>
-				<model>Maybe</model>
-				<year>123</year>
-				<condition>No</condition>
-				<value>2389</value>
-				<notes>Loco</notes>
-				<type>Lampara</type>
-			</record>
-			<record>
-				<make>Mouse</make>
-				<model>Clear</model>
-				<year>433</year>
-				<condition>Maybe</condition>
-				<value>122</value>
-				<notes>Sincere</notes>
-				<type>Anything</type>
-			</record>
-			<record>
 				<make>Yes</make>
 				<model>No</model>
 				<year>343</year>

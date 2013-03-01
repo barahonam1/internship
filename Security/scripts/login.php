@@ -3,8 +3,10 @@
 		header('Location: ../index.html?error=Not Authorized');
 	}
 	
-	// A secret salt
-	$salt = "FolderHash";
+	// The Salt for the foldername
+	$foldersalt = "FolderHash";
+	// The Salt for the filename
+	$filesalt = "FileHash";
 	
 	// The Specified Username & Password
 	$username = mysql_escape_string(htmlentities($_POST['username']));

@@ -1,3 +1,13 @@
+<?php
+	$errorString = "<h4>Password Requirements:</h4><p>6 or more characters</p><p>Atleast 1 uppercase letter</p><p>Atleast 1 lowercase letter</p><p>Atleast one number</p>";
+	$type = "alert";
+	
+	if (isset($_GET['errorString'])) {
+		$errorString = $_GET['errorString'];
+		$type = "warning";
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
@@ -14,8 +24,39 @@
         padding-bottom: 40px;
         background-color: #f5f5f5;
       }
-
-
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+      #submit {
+	      height: 40px;
+	      width: 130px;
+      }
+      #register {
+      	  height: 40px;
+	      width: 130px;
+	      margin-left: 35px;
+      }
     </style>
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="css/m-styles.min.css" rel="stylesheet">
@@ -29,11 +70,12 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" method="post" id="form" action="scripts/login.php" data-toggle="popover" data-placement="right" data-content="The password is incorrect" title="" data-original-title="Input Validation">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="input-block-level" name="username" placeholder="Username" required="required">
+      <form class="form-signin" method="POST" id="form" action="scripts/login.php">
+        <h2 class="form-signin-heading" align="center">Login</h2><hr />
+        <input type="text" class="input-block-level" name="email" placeholder="Email" required="required">
         <input type="password" class="input-block-level" id="password" name="password" placeholder="Password" required="required" pattern="^(?=.*[^a-zA-Z])(?=.*[a-z])(?=.*[A-Z])\S{6,}$">
-        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+        <button class="m-btn green" id="submit" type="submit">Sign in</button>
+        <a href="register.php"><button class="m-btn blue" id="register" type="button">Register</button></a>
       </form>
 
     </div> <!-- /container -->
@@ -52,12 +94,12 @@
     
     <script type="text/javascript">
     $(function() {
-	   validate(); 
+	   validate();
     });
     	function validate() {
     		$.noty.closeAll();
 	    	noty({
-	    		layout: 'bottom', text: '<h4>Password Requirements:</h4><p>6 or more characters</p><p>Atleast 1 uppercase letter</p><p>Atleast 1 lowercase letter</p><p>Atleast one number</p>', type: 'alert'
+	    		layout: 'bottom', text: '<?php echo $errorString; ?>', type: '<?php echo $type; ?>'
 	    	});
     	}
     	

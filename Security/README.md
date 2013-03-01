@@ -24,15 +24,6 @@ Foldername Encryption: <br />
 Filename Encryption: <br />
   Salt: "FileHash" <br />
   FolderEncryptionKey + Salt
-  
-  
-Measurements
--------------
-
-To decrypt, the attacker has to, first, figure out the method of encryption for the folder hash. Next, they would have to bruteforce the folder salt and merge all the resulting hash with the resulting hash for the folder hash, then compressing the hash into the method of encryption. Next, they would have to figure out the method of encrytion for the file hash. Then would then need the specified salt for the file hash. Without the folder hash, the file hash is non decryptable, so they would need to bruteforce the resulting hash of step 4, with the bruteforce of file hash, and then will they get the foldername and filename. 
-Algorithmic magnitude renders the quickest bruteforce to be done in 42+ years, or 28 years on 12 core machine with a single key interface. We are using a quad key.
-
-Script utilize input validation using htmlentities, mysql_escape and magic quote commands for any interaction. We will have to make sure to do the same for every input in the XML document.
 
 
 Demo

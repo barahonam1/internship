@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+	<tables>
+		<guitars>
+			<tabname>Guitars</tabname>
+			<title>Guitars</title>
+			<longdesc>Some long description for guitars</longdesc>
+			<records><record>
+					<make>Martin</make>
+					<model>D-42</model>
+					<year>2003</year>
+					<condition>Good</condition>
+					<value>3500</value>
+					<notes>goldPU</notes>
+					<type>Accoustic</type></record>
+				<record>
+					<make>Martin</make>
+					<model>D-28</model>
+					<year>1973</year>
+					<condition>Average</condition>
+					<value>900</value>
+					<notes>Donna</notes>
+					<type>Accoustic</type></record>
+				<record>
+					<make>Epiphone</make>
+					<model>335</model>
+					<year>1994</year>
+					<condition>Good</condition>
+					<value>300</value>
+					<notes>Red</notes>
+					<type>Semi</type></record>
+				<record>
+					<make>Fender</make>
+					<model>Strat</model>
+					<year>1987</year>
+					<condition>Average</condition>
+					<value>800</value>
+					<notes>Black</notes>
+					<type>Solid</type></record>
+				<record>
+					<make></make>
+					<model></model>
+					<year></year>
+					<condition></condition>
+					<value></value>
+					<notes></notes>
+					<type></type></record>
+				</records>
+		</guitars>	
+		<albums>
+			<tabname>Albums</tabname>
+			<title>Cassette and CD Collection</title>
+			<longdesc>Some long description for guitars</longdesc>
+			<records><record>
+					<album>White Album</album>
+					<artist>Beatles</artist>
+					<media>Vinyl</media>
+					<condition>Good</condition>
+					<correas></correas></record>
+				<record>
+					<album>Abby Road</album>
+					<artist>Beatles</artist>
+					<media>Cassette</media>
+					<condition>Average</condition>
+					<correas></correas></record>
+				<record>
+					<album>Beatles '65</album>
+					<artist>Beatles</artist>
+					<media>Vinyl</media>
+					<condition>Average</condition>
+					<correas></correas></record>
+				<record>
+					<album></album>
+					<artist></artist>
+					<media></media>
+					<condition></condition>
+					<correas></correas></record>
+				</records>
+		</albums>
+		<music>
+			<tabname>Music</tabname>
+			<title>For Music</title>
+			<longdesc>Some long description for music</longdesc>
+			<records><record>
+					<name>Do you want to know a secret?</name>
+					<time>1:56</time>
+					<artist>The Beatles</artist>
+					<album>Unknown</album>
+					<genre>Rock, Oldies</genre></record>
+				<record>
+					<name>If I fell</name>
+					<time>2:22</time>
+					<artist>The Beatles</artist>
+					<album>Unknown</album>
+					<genre>Rock, Oldies</genre></record>
+				<record>
+					<name>Love me do</name>
+					<time>2:20</time>
+					<artist>The Beatles</artist>
+					<album>Unknown</album>
+					<genre>Rock, Oldies</genre></record>
+				<record>
+					<name>Sugar Sugar</name>
+					<time>2:47</time>
+					<artist>Archies</artist>
+					<album>Sugar, Sugar</album>
+					<genre>Oldies</genre></record>
+				<record>
+					<name>My Sweet Lord</name>
+					<time>4:40</time>
+					<artist>George Harrison</artist>
+					<album>The Dark Horse</album>
+					<genre>Oldies, Rock</genre></record>
+				<record>
+					<name>Venus</name>
+					<time>3:02</time>
+					<artist>Shocking Blue</artist>
+					<album>Unknown</album>
+					<genre>70's</genre></record>
+				<record>
+					<name>Riders on the storm</name>
+					<time>7:13</time>
+					<artist>The Doors</artist>
+					<album>The Doors</album>
+					<genre>70's</genre></record>
+				<record>
+					<name>Boulevard</name>
+					<time>4:53</time>
+					<artist>Los Pericos</artist>
+					<album>Yerbabuena</album>
+					<genre>Reggae</genre></record>
+				<record>
+					<name>Try It Out</name>
+					<time>6:08</time>
+					<artist>Gino Soccio</artist>
+					<album>Unknown</album>
+					<genre>70's, Disco</genre></record>
+				<record>
+					<name>Call me the breeze</name>
+					<time>5:07</time>
+					<artist>Lynyrd Skynyrd</artist>
+					<album>Unknown</album>
+					<genre>Rock, Classic Rock</genre></record>
+				<record>
+					<name>Sparrow Soul</name>
+					<time>6:37</time>
+					<artist>Micky More</artist>
+					<album>Unknown</album>
+					<genre>Groove, House, Funk, Jazz</genre></record>
+				<record>
+					<name>You can do magic</name>
+					<time>3:53</time>
+					<artist>America</artist>
+					<album>Unknown</album>
+					<genre>80's, 80's melodies</genre></record>
+				<record>
+					<name>She's a Bad Mamma Jamma</name>
+					<time>3:54</time>
+					<artist>Carl Carlton</artist>
+					<album>Unkown</album>
+					<genre>70's, funk, disco</genre></record>
+				<record>
+					<name>White Wedding</name>
+					<time>4:09</time>
+					<artist>Billy Idol</artist>
+					<album>Greatest Hits</album>
+					<genre>Rock, 80's, New Wave</genre></record>
+				<record>
+					<name>Rock of Ages</name>
+					<time>4:08</time>
+					<artist>Def Leppard</artist>
+					<album>Unknown</album>
+					<genre>Rock</genre></record>
+				<record>
+					<name></name>
+					<time></time>
+					<artist></artist>
+					<album></album>
+					<genre></genre></record>
+				</records>
+		</music>
+		<bank>
+			<tabname>Bank Accounts</tabname>
+			<title>Bank Accounts</title>
+			<longdesc>Some long description for bank accounts</longdesc>
+			<records><record>
+					<name>Bank of America</name>
+					<account>12442322222</account>
+					<balance>$4300</balance>
+					<location>West New York</location>
+					<notes>Nothing</notes></record>
+				<record>
+					<name>Chase</name>
+					<account>12442322222</account>
+					<balance>$3432</balance>
+					<location>Union City</location>
+					<notes>Nothing</notes></record>
+				<record>
+					<name>PNC Bank</name>
+					<account>23232223232</account>
+					<balance>$9000</balance>
+					<location>Washington</location>
+					<notes>Check</notes></record>
+				<record>
+					<name>Washington Mutual</name>
+					<account>34323223423</account>
+					<balance>$8343</balance>
+					<location>Paramus</location>
+					<notes>Cero</notes></record>
+				<record>
+					<name>Wachovia</name>
+					<account>99333993333</account>
+					<balance>$2231</balance>
+					<location>Guttenberg</location>
+					<notes>Lejos</notes></record>
+				<record>
+					<name></name>
+					<account></account>
+					<balance></balance>
+					<location></location>
+					<notes></notes></record>
+				</records>
+		</bank>	
+		<insurance>
+			<tabname>Insurance</tabname>
+			<title>Insurance Companies</title>
+			<longdesc>Some long description for insurance</longdesc>
+			<records>
+				<record>
+					<name></name>
+					<location></location>
+					<notes></notes>
+				</record>
+			</records>
+		</insurance>		
+	</tables>
+</response>

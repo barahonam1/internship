@@ -10,6 +10,7 @@ class updateXMLFiles
 	private $data;
 	private $table;
 	private $title;
+	private $xml;
 	
 	public function __construct($hd, $dt, $tb, $tt)
 	{
@@ -18,12 +19,13 @@ class updateXMLFiles
 		$this->data = $dt;
 		$this->table = $tb;
 		$this->title = $tt;
+		$this->xml = "xml/masterdata.xml";
 	}	
 	
 	public function updateXML()
 	{
 		$doc = new DOMDocument();
-		$doc->load("xml/master.xml");			
+		$doc->load($this->xml);			
 		
 		$tableToUpdate = $this->table;
 			
@@ -37,7 +39,7 @@ class updateXMLFiles
 		
 		$counter = 0;
 		
-		for($i=0; $i<sizeof($this->data) - sizeof($this->headers); $i++) //ignore last spare record
+		for($i=0; $i<sizeof($this->data); $i++) //sizeof($this->data) - sizeof($this->headers) for ignoring last spare record
 		{
 			
 			if($i == 0 || ($i%sizeof($this->headers) == 0))
@@ -46,11 +48,12 @@ class updateXMLFiles
 			}						
 			
 			//pretty print xml
-			$txtn = $doc->createTextNode("\n\t\t\t\t");
+			$txtn = $doc->createTextNode("\n\t\t\t\t\t");
 			$recordElement->appendChild($txtn);
-			//pretty print xml
+			//pretty print xml			
 			
-			$eachElement = $doc->createElement(strtolower($this->headers[$counter]), $this->data[$i]); //make sure not empty
+			$eachElement = $doc->createElement(strtolower($this->headers[$counter]), 
+			get_magic_quotes_gpc() == true ? strip_tags(stripslashes($this->data[$i])) : strip_tags($this->data[$i])); //portability
 			$recordElement->appendChild($eachElement);			
 			
 			$counter++;
@@ -58,9 +61,9 @@ class updateXMLFiles
 			if(($i+1)%sizeof($this->headers) == 0)
 			{				
 				//pretty print xml
-				$txtn2 = $doc->createTextNode("\n\t\t\t");
+				$txtn2 = $doc->createTextNode("\n\t\t\t\t");
 				$recordElement->appendChild($txtn2);
-				$textn3 = $doc->createTextNode("\n\t\t\t");
+				$textn3 = $doc->createTextNode("\n\t\t\t\t");
 				$tagName->appendChild($textn3);
 				//pretty print xml
 				
@@ -71,21 +74,11 @@ class updateXMLFiles
 		
 		
 		//pretty print xml
-		$txtn4 = $doc->createTextNode("\n\t\t");
+		$txtn4 = $doc->createTextNode("\n\t\t\t");
 		$tagName->appendChild($txtn4);
 		//pretty print xml
 		
-		$xmlString = $doc->saveHTML(); //use saveHTML() better for preserving empty nodes <node></node>
-		
-		$xmlf = fopen("xml/master.xml", "w"); 
-		if(!$xmlf)
-		{
-			echo "There was an error. Please try again.";
-			exit;
-		}
-		@fputs($xmlf, "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n".$xmlString);
-		@fclose($xmlf);	
-		
+		$xmlString = $doc->save($this->xml, LIBXML_NOEMPTYTAG); //use LIBXML_NOEMPTYTAG for preserving empty nodes <node></node>				
 	}
 }
 ?>

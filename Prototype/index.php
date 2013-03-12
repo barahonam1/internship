@@ -12,8 +12,9 @@
     <!-- Extra CSS -->
     <link rel="stylesheet" href="css/extra.css">
   </head>
-  <body>
   
+  <body>
+
     <!-- Nav Bar -->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
@@ -30,7 +31,7 @@
                     </p>
                     <ul class="nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="http://google.com">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -38,15 +39,12 @@
         </div>
     </div>
 	
-    
-    <!-- Content -->
+    <!-- Content -->    
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span2">
 			<div class="well sidebar-nav">
-                <ul class="nav nav-tabs nav-stacked">
-                  <li class="active"><a href="#home" data-toggle="tab" class="xml" title="guitars">Guitars</a></li>
-                  <li><a href="#profile" data-toggle="tab" class="xml" title="albums">Albums</a></li>
+                <ul id="myTab" class="nav nav-tabs nav-stacked">                  
                 </ul>
             </div>
         </div>
@@ -60,6 +58,7 @@
                 <div id="output"></div>
                 
                 <span id="saveChanges" class="btn">Save Changes</span>
+                <span id="cancelChanges" class="btn btn-warning disabled">Cancel </span>
                 <span id="deleteFunction" class="btn btn-danger">Delete</span>                
                 
 			</div>
@@ -74,13 +73,32 @@
         <h3 id="myModalLabel">Delete Record</h3>
       </div>
       <div class="modal-body">
-        <p align="center"><i class="icon-question-sign"></i> Are you sure you want to delete these records?</p>
+        <p id="modalmsg" align="center"><i class="icon-question-sign"></i> Are you sure you want to delete these records?</p>
       </div>
       <div class="modal-footer">
         <button id="deleteNow" class="btn btn-primary">OK</button>
         <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button> <!-- !@ Should uncheck? -->
       </div>
     </div>
+    
+    <!-- Modal (Navigate Away) -->
+    <div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Unsaved Changes</h3>
+      </div>
+      <div class="modal-body">
+        <p id="modalmsg" align="center"><i class="icon-question-sign"></i> Do you want to save changes before navigating away from this table?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="yesbtn" class="btn btn-primary">Yes</button>
+        <button id="nobtn" data-dismiss="modal" class="btn btn-primary">No</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button> <!-- !@ Should uncheck? -->
+      </div>
+    </div>
+       
+    <!--Experimental-->
+    <div id="experimental"></div>
     
     <!-- Bootstrap -->
     <script src="js/jquery.js"></script> <!--@! bt & pl-->

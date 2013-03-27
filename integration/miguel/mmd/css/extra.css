@@ -1,0 +1,49 @@
+/*General CSS*/
+body {
+	padding-top: 60px;
+	background:url(../img/btext.png);
+}
+.span2, .well.sidebar-nav {
+	min-width:100px;
+}
+#output {
+	margin-bottom:15px;
+	min-height:280px;
+}
+.hero-unit {
+	padding:12px;
+}
+.hero-unit h1 {
+	font-size:30px;
+	margin:0px 0px 15px 0px;
+}
+/*Overlay Loading*/
+	
+#loading {
+	position:absolute;
+	top:50%;
+	left:50%;
+	z-index:1;
+	display:none;
+}
+#overlay {
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:1;
+	background:url(../img/ui-bg_diagonals-medium_35_8f8f8f_40x40.png);
+	width:100%;
+	height:100%;
+	opacity:0.25;
+	filter:Alpha(Opacity=0);
+	display:none;
+}
+/*Remove Row CSS*/
+.handsontable.htRemoveRow col.htRemoveRow {
+	width: 28px;
+}
+.handsontable tr:first-child th.htNoFrame,  .handsontable th:first-child.htNoFrame,  .handsontable th.htNoFrame {
+	border-left-width:0;
+	background-color:#eeeeee;
+	border-color:#eeeeee;
+}
